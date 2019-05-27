@@ -1,0 +1,2 @@
+- Update the tekst in README.md to show correct folder/driectory structure 
+- Update changelog
