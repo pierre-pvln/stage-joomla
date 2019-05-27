@@ -2,10 +2,9 @@
 <br/>		
 Generic staging scripts for Joomla! website extensions.<br/>
 <br/>
-* Documentation and download script: <br/>
-http://www.pvln.nl/stage-joomla <br/>
+* Documentation and download script: http://www.pvln.nl/stage-joomla <br/>
 <br/>
-Below folder structure should be present on the workstation on which development is done:
+Below folder structure should be present on the workstation on which development is done:<br/>
 ```
 extensionname\00_dev_code       folder with the code for the Joomla! extension, 
                                which gets installed on the Joomla! website
