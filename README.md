@@ -3,7 +3,7 @@
 Generic staging scripts for Joomla! website extensions.<br/>
 <br/>
 * Documentation and download script: <br/>
-http://www.pvln.nl/stage-joomla-extensions <br/>
+http://www.pvln.nl/stage-joomla <br/>
 <br/>
 Below folder structure should be present on the workstation on which development is done:
 ```
@@ -16,14 +16,4 @@ extensionname\00_dev_code       folder with the code for the Joomla! extension,
             \07_documentation  folder with documentation on the extension, the ToDo list
             \08_sources        folder with relevant information links and inspiration
                                used to create the extension
-```
-<br/>
-The downloadable extension .zip file is available at:
-```
-download.pvln.nl/joomla/<extensiontype>/<extensionname>/
-```
-<br/>
-The downloadable extension update .xml file is available at:
-```
-update.pvln.nl/joomla/<extensiontype>/<extensionname>/
 ```
