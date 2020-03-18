@@ -4,7 +4,7 @@
 ::
 :: Required environment variables
 :: ==============================
-:: extension_name                 the name of the extension
+:: extension                      the name of the extension
 :: update_folder                  the folder where the files are stored in on the update server
 :: download_folder                the folder where the files are stored in on the download server
 :: secrets_folder                 the folder where the secrets are stored
@@ -20,7 +20,7 @@ SETLOCAL ENABLEEXTENSIONS ENABLEDELAYEDEXPANSION
 ::
 :: Check if required environment variables are set. If not exit script ...
 ::
-IF "%extension_name%" == "" (
+IF "%extension%" == "" (
    SET ERROR_MESSAGE=[ERROR] [%~n0 ] extension_name not set ...
    GOTO ERROR_EXIT
 )
@@ -75,8 +75,8 @@ FOR %%x IN (%CHECK_TRANSFER_LIST%) DO (
        SET TRANSFER_COMMAND=%%x
 	   ECHO [INFO ] Checking requirements for !TRANSFER_COMMAND!
 	   CD "%secrets_folder%"
-       IF NOT EXIST stage_%extension_name%_!TRANSFER_COMMAND!.cmd (
-	       SET ERROR_MESSAGE=[ERROR] [%~n0 ] File stage_%extension_name%_!TRANSFER_COMMAND!.cmd with staging settings for %extension_name% building blocks doesn't exist
+       IF NOT EXIST stage_%extension%_!TRANSFER_COMMAND!.cmd (
+	       SET ERROR_MESSAGE=[ERROR] [%~n0 ] File stage_%extension%_!TRANSFER_COMMAND!.cmd with staging settings for %extension% building blocks doesn't exist
 	       ECHO !ERROR_MESSAGE!
        )
        CD "%cmd_dir%"
@@ -107,7 +107,7 @@ ECHO [INFO ] Transfer using %TRANSFER_COMMAND% ...
 :: - pw_updateserver
 ::
 CD %secrets_folder%
-CALL stage_%extension_name%_%TRANSFER_COMMAND%.cmd
+CALL stage_%extension%_%TRANSFER_COMMAND%.cmd
 ::
 :: Put the files on the server
 :: For some put actions temporary files are needed. Set a foldername for that.

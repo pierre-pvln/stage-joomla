@@ -18,9 +18,9 @@
 :: - pw_updateserver              the password for that user
 :: - update_folder                the folder where the files are stored in on the update server
 ::
-:: -extensionprefix				  the prefix of the extension
-:: -extension					  the extension name
-:: -version                       the version of the extension
+:: - extensionprefix			  the prefix of the extension
+:: - extension  e				  the extension name
+:: - version                      the version of the extension
 
 :: Remarks
 :: ==============================
