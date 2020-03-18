@@ -1,2 +1,4 @@
-- Update the tekst in README.md to show correct folder/driectory structure 
+- Update the tekst in README.md to show correct folder/directory structure 
 - Update changelog
+- Settings for folders get it from the directory structure
+- create subfolders on download and update server before files are transfered
