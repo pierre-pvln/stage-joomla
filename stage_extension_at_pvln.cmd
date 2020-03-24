@@ -31,8 +31,8 @@ SET ERROR_MESSAGE=errorfree
 ::
 
 :: Where to put the files on the staging/download server
-SET download_folder=/download/joomla/modules/ipheiongraphs/
-SET update_folder=/update/joomla/modules/ipheiongraphs/
+SET download_folder=/download/joomla/modules/ipheionmaps/
+SET update_folder=/update/joomla/modules/ipheionmaps/
 
 :: Where to find the secrets
 SET secrets_folder=..\..\..\_secrets
