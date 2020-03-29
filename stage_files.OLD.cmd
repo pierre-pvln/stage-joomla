@@ -80,12 +80,8 @@ FOR %%x IN (%CHECK_TRANSFER_LIST%) DO (
 	       ECHO !ERROR_MESSAGE!
        )
        CD "%cmd_dir%"
-	   IF NOT EXIST .\stage\!TRANSFER_COMMAND!_to_downloadserver.cmd (
-           SET ERROR_MESSAGE=[ERROR] [%~n0 ] File .\stage\!TRANSFER_COMMAND!_to_downloadserver.cmd script doesn't exist
-    	   ECHO !ERROR_MESSAGE!
-       )
-	   IF NOT EXIST .\stage\!TRANSFER_COMMAND!_to_updateserver.cmd (
-           SET ERROR_MESSAGE=[ERROR] [%~n0 ] File .\stage\!TRANSFER_COMMAND!_to_updateserver.cmd script doesn't exist
+	   IF NOT EXIST .\stage\!TRANSFER_COMMAND!_put.cmd (
+           SET ERROR_MESSAGE=[ERROR] [%~n0 ] File .\stage\!TRANSFER_COMMAND!_put.cmd script doesn't exist
     	   ECHO !ERROR_MESSAGE!
        )
 	   IF "!ERROR_MESSAGE!" == "" GOTO TRANSFER_COMMAND_FOUND
@@ -112,31 +108,19 @@ ECHO [INFO ] Transfer using %TRANSFER_COMMAND% ...
 ::
 CD %secrets_folder%
 CALL stage_%extension%_%TRANSFER_COMMAND%.cmd
-
 ::
 :: Put the files on the server
-:: For some put actions temporary files are needed. Set a temporary_folder for that.
+:: For some put actions temporary files are needed. Set a foldername for that.
 ::
 SET temporary_folder=%secrets_folder%
-ECHO.
-ECHO [INFO ] Running .\stage\%TRANSFER_COMMAND%_to_downloadserver.cmd ...
+ECHO [INFO ] Running .\stage\%TRANSFER_COMMAND%_put.cmd ...
 CD "%cmd_dir%"
-CALL .\stage\%TRANSFER_COMMAND%_to_downloadserver.cmd
+CALL .\stage\%TRANSFER_COMMAND%_put.cmd
 IF %ERRORLEVEL% NEQ 0 (
-   SET ERROR_MESSAGE=[ERROR] [%~n0 ] script .\stage\%TRANSFER_COMMAND%_to_downloadserver.cmd returned error ...
+   SET ERROR_MESSAGE=[ERROR] [%~n0 ] script .\stage\%TRANSFER_COMMAND%_get.cmd returned error ...
    GOTO ERROR_EXIT
 )
-ECHO [INFO ] Files transfered to downloadserver ...
-
-ECHO.
-ECHO [INFO ] Running .\stage\%TRANSFER_COMMAND%_to_update.cmd ...
-CALL .\stage\%TRANSFER_COMMAND%_to_updateserver.cmd
-IF %ERRORLEVEL% NEQ 0 (
-   SET ERROR_MESSAGE=[ERROR] [%~n0 ] script .\stage\%TRANSFER_COMMAND%_to_updateserver.cmd returned error ...
-   GOTO ERROR_EXIT
-)
-ECHO [INFO ] Files transfered to updateserver ...
-
+ECHO [INFO ] Files staged ...
 GOTO CLEAN_EXIT
 
 :ERROR_EXIT

@@ -1,6 +1,13 @@
 ---
-#  Changelog Baselines: .htaccess building blocks staging scripts
+#  Changelog Stage-Joomla: Joomla! extensions staging scripts
 ---
+<h4>v0.2.6 2020-03-29</h4>
+<ul>
+<li> Version file added</li>
+<li> New folder structure created</li>
+<li> Split up downloading between update and download server</li>
+</ul>
+
 <h4>v0.2.5 2019-02-20</h4>
 <ul>
 <li> Exit code for subscript added</li>

@@ -41,6 +41,8 @@ SET secrets_folder=..\..\..\_secrets
 :: do not start with \ , and do not end with \
 SET output_dir=..\_bin
 
+CLS
+
 CD "%cmd_dir%"
 :: struc_utils_folder
 CD ..\struc\utils\
@@ -61,14 +63,28 @@ IF EXIST version.cmd (
    GOTO ERROR_EXIT
 )
 
-CD "%cmd_dir%"
-
 ::
 :: Assume psftp should be used first. Then pscp. If not available choose ftp
 ::
-
 :: !! Do not use " or ' at beginning or end of the list
 ::    Do not use sftp as the password can't be entered from batch files   
 SET CHECK_TRANSFER_LIST=psftp pscp ftp
 
+CD "%cmd_dir%"
 CALL stage_files.cmd
+
+
+GOTO CLEAN_EXIT
+
+:ERROR_EXIT
+cd "%cmd_dir%" 
+ECHO *******************
+ECHO %ERROR_MESSAGE%
+ECHO *******************
+
+   
+:CLEAN_EXIT
+cd "%cmd_dir%" 
+:: Wait some time and exit the script
+::
+timeout /T 10
