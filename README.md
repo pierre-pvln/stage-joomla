@@ -25,7 +25,7 @@ __Managed using git__
 ```
 <br>
 
-__Not managed, only present at develepoment workstation__
+__Not managed, only present at development workstation__
 ```
 <extensionname>\misc           folder with relevant information links and inspiration, but not relevant for code
 <extensionname>\misc\original  if relevant the original code which is changed in \code\src
