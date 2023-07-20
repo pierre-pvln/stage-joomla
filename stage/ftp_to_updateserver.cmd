@@ -61,6 +61,7 @@ ECHO %pw_updateserver%>>%temporary_folder%\_update_files.txt
 ECHO binary>>%temporary_folder%\_update_files.txt
 ECHO cd %update_folder%>>%temporary_folder%\_update_files.txt
 ECHO put %output_dir%\index.html>>%temporary_folder%\_update_files.txt
+ECHO put %output_dir%\changelog.xml>>%temporary_folder%\_update_files.txt
 ECHO put %output_dir%\%extensionprefix%%extension%.xml>>%temporary_folder%\_update_files.txt
 ECHO bye>>%temporary_folder%\_update_files.txt
 
