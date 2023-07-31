@@ -22,5 +22,5 @@
 #
 majorversion=0
 minorversion=2
-patchversion=6
+patchversion=7
 devversion=0
