@@ -68,7 +68,7 @@ ECHO bye>>%temporary_folder%\_download_files.txt
 ftp -s:%temporary_folder%\_download_files.txt %downloadserver%
 
 :: Remove %temporary_folder%\_download_files.txt file
-del %temporary_folder%\_download_files.txt
+::del %temporary_folder%\_download_files.txt
 
 ECHO.
 ECHO [INFO ] [%~n0 ] **************************************
