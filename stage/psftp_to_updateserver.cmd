@@ -59,7 +59,8 @@ IF EXIST "%temporary_folder%\_update_files.txt" (del "%temporary_folder%\_update
 ECHO cd %update_folder%>>%temporary_folder%\_update_files.txt
 ECHO lcd %output_dir%>>%temporary_folder%\_update_files.txt
 ECHO put %output_dir%\index.html>>%temporary_folder%\_update_files.txt
-echo put %output_dir%\%extensionprefix%%extension%_%version%.zip>>%temporary_folder%\_update_files.txt
+ECHO put %output_dir%\changelog.xml>>%temporary_folder%\_update_files.txt
+ECHO put %output_dir%\%extensionprefix%%extension%_%version%.zip>>%temporary_folder%\_update_files.txt
 ECHO cd ..>>%temporary_folder%\_update_files.txt
 ECHO lcd ..>>%temporary_folder%\_update_files.txt
 ECHO bye>>%temporary_folder%\_update_files.txt
