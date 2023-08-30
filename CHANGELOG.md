@@ -4,6 +4,7 @@
 <h4>v0.2.7 2023-07-20</h4>
 <ul>
 <li> Added changelog.xml for Joomla4</li>
+<li> Updated .gitignore to not include .bak files</li>
 </ul>
 
 <h4>v0.2.6 2020-03-29</h4>
