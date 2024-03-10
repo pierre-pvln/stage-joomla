@@ -53,6 +53,7 @@ ECHO.
 :: Run the script
 "%staging_command%" -l %user_updateserver% -pw %pw_updateserver% %output_dir%\index.html %updateserver%:%update_folder%
 "%staging_command%" -l %user_updateserver% -pw %pw_updateserver% %output_dir%\%extensionprefix%%extension%.xml %updateserver%:%update_folder%
+"%staging_command%" -l %user_updateserver% -pw %pw_updateserver% %output_dir%\changelog.xml %updateserver%:%update_folder%
 
 ECHO.
 ECHO [INFO ] [%~n0 ] **************************************
